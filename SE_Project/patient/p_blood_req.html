@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/logo.png" />
+    <title>Quantum Blood Lab</title>
+  </head>
+  <body style="overflow: hidden">
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav_bar">
+      <div class="container-fluid ps-5 pe-5 nav_container">
+        <a class="navbar-brand ms-5" href="#" id="pWelcome"
+          >Quantum Blood Lab <i class="fa-solid fa-droplet"></i
+        ></a>
+
+        <button id="logoutBtn" class="logout-button">
+          Logout <span><i class="fa-solid fa-right-from-bracket"></i></span>
+        </button>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!--  dashboard-container s-->
+    <div class="dashboardContainer d-flex">
+      <!-- sidebar start -->
+      <div class="sidebar bg-dark text-white text-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item p-2 border-bottom border-secondary active-li">
+            <a
+              class="nav-link"
+              id="p-dash-txt"
+              aria-current="page"
+              href="/patient/p_dashboard.html"
+              >Dashboard</a
+            >
+          </li>
+          <li class="nav-item p-2 border-bottom border-secondary">
+            <a class="nav-link" href="/patient/p_profile.html">Profile</a>
+          </li>
+          <li class="nav-item p-2 border-bottom border-secondary">
+            <a class="nav-link" href="/patient/p_blood_req.html"
+              >Blood Request</a
+            >
+          </li>
+
+          <li class="nav-item p-2 border-bottom border-secondary">
+            <a class="nav-link" href="/patient/p_request_history.html"
+              >Request History</a
+            >
+          </li>
+
+          <li class="nav-item p-2 border-bottom border-secondary">
+            <a class="nav-link" href="/patient/p_change_pass.html"
+              >Change Password</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar end -->
+
+      <!-- main content s -->
+      <div class="main-content">
+        <!-- blood request form s -->
+        <div class="bg-white p-5 m-auto border-50 rounded" style="width: 40rem">
+          <h5 class="text-center mb-5">Blood Request Form</h5>
+
+          <form id="br-form">
+            <div class="d-flex justify-content-around">
+              <div>
+                <label for="br-fName" class="form-label">First Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="br-fName"
+                  id="br-fName"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="br-lName" class="form-label">Last Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="br-lName"
+                  id="br-lName"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-around mt-3">
+              <div>
+                <label for="br-age" class="form-label">Age:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="br-age"
+                  id="br-age"
+                  required
+                />
+              </div>
+
+              <div>
+                <p>Gender:</p>
+
+                <div
+                  class="form-control px-2"
+                  style="width: 13.5rem; margin-top: -7px"
+                >
+                  <input
+                    type="radio"
+                    name="br-gender"
+                    id="br-male"
+                    class="ms-4"
+                    value="male"
+                    required
+                  />
+                  <label for="br-male">Male</label>
+
+                  <input
+                    type="radio"
+                    name="br-gender"
+                    id="br-female"
+                    value="female"
+                    class="ms-4"
+                    required
+                  />
+                  <label for="br-female">Female</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-around mt-3">
+              <div>
+                <label for="br-email" class="form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="br-email"
+                  id="br-email"
+                  readonly
+                />
+              </div>
+
+              <div>
+                <label for="br-bloodGrp" class="form-label">Blood Group:</label>
+                <select
+                  class="form-select"
+                  id="br-bloodGrp"
+                  style="width: 13.5rem"
+                >
+                  <option disabled selected>Enter Blood Group</option>
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option>B+</option>
+                  <option>B-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                </select>
+              </div>
+            </div>
+
+            <div
+              class="d-flex justify-content-around mt-3 gap-4"
+              style="padding: 0 1.75rem"
+            >
+              <div class="w-75">
+                <label for="br-reason" class="form-label"
+                  >Reason of Blood Request:</label
+                >
+                <input
+                  type="text"
+                  name="br-reason"
+                  id="br-reason"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="br-quantity" class="form-label"
+                  >Quantity (in ml):</label
+                >
+                <input
+                  type="number"
+                  name="br-quantity"
+                  id="br-quantity"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-around mt-3">
+              <div>
+                <label for="br-address" class="form-label">Address:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="br-address"
+                  id="br-address"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="br-phone" class="form-label">Phone:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="br-phone"
+                  id="br-phone"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="mt-3" style="padding: 0 1.75rem">
+              <label for="br-description" class="form-label"
+                >Description:</label
+              >
+              <input
+                type="text"
+                name="br-description"
+                id="br-description"
+                placeholder="optional"
+                class="form-control"
+              />
+            </div>
+
+            <div class="d-flex justify-content-center my-3">
+              <button
+                class="br-submit-btn btn btn-primary w-25 mt-3"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- blood request form e -->
+      </div>
+      <!-- main content e  -->
+    </div>
+    <!--  dashboard-container e-->
+
+    <!-- bootstrap cdn s-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap cdn e-->
+    <script src="/js/logout.js"></script>
+    <script src="/js/p_blood_req.js"></script>
+  </body>
+</html>

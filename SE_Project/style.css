@@ -1,0 +1,168 @@
+* {
+  font-family: "Lora", serif;
+}
+
+body {
+  background-color: #decaca;
+}
+
+/* home page */
+title {
+    color:#bf1d1d;
+}
+
+.nav_bar {
+    background-color: #b30000 !important; /* Blood red shade */
+    color: white;
+}
+
+    .nav_bar .navbar-brand,
+    .nav_bar .logout-button {
+        color: white !important;
+    }
+
+
+.nav_container {
+  background-color: #bf1d1d;
+  padding: 8px 28px;
+}
+
+.navbar-brand {
+    background-color: #bf1d1d;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.nav_container div ul li a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.body_container {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.home_img {
+  height: 23rem;
+  width: 192rem;
+  background-image: url(assets/blood_donate.jpg);
+  background-size: cover;
+  border-radius: 10px;
+}
+
+footer h2 {
+  padding-top: 1rem;
+  color: red;
+  text-align: center;
+}
+
+/* logout btn */
+
+.logout-button {
+  background: linear-gradient(135deg, #110c0e, #513e3b);
+  color: white;
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.4);
+  outline: none;
+}
+
+.logout-button span {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #696867, #4b4647);
+  box-shadow: 0px 6px 15px rgba(255, 75, 43, 0.6);
+}
+
+.logout-button:hover span {
+  transform: translateX(3.5px);
+}
+
+/* dashboard */
+
+.main-content {
+  flex: 1;
+  padding: 2rem 5rem;
+  max-height: 100vh; /* Restricts the height to the viewport */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.sidebar {
+  height: 100vh;
+  flex: 0.3;
+}
+
+.info-box {
+  height: 10rem;
+  width: 15rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+/* update info  */
+
+.profile-box1 {
+  position: relative;
+  left: 200px;
+  transition: left 0.3s ease-in-out 0s;
+}
+
+.profile-box2 {
+  position: relative;
+  bottom: 2rem;
+  left: 800px;
+  transition: left 0.3s ease-in-out 0s;
+}
+
+/* history table  */
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th,
+td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+/* contact us */
+
+.contact-box {
+  box-shadow: 2px 2px 5px black;
+}
+
+.contact-info {
+  transition: transform 0.1s ease-in-out;
+}
+
+.contact-info:hover {
+  transform: scale(1.1);
+}
+
+/* blood stock */
+
+.b-stk {
+  transition: transform 0.1s ease;
+}
+
+.b-stk:hover {
+  transform: scale(1.05);
+}

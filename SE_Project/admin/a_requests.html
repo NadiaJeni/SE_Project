@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Requests - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg nav_bar">
+        <div class="container-fluid nav_container">
+            <a class="navbar-brand" href="#">
+                Quantum Blood Lab <i class="fa-solid fa-droplet"></i>
+            </a>
+            <button id="logoutBtn" class="logout-button">
+                Logout <span><i class="fa-solid fa-right-from-bracket"></i></span>
+            </button>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- dashboard container start (THIS is what was missing) -->
+    <div class="dashboardContainer">
+        <!-- sidebar start -->
+        <div class="sidebar bg-dark text-white text-center">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item p-2 border-bottom border-secondary">
+                    <a class="nav-link text-white" href="a_dashboard.html">🏠 Dashboard</a>
+                </li>
+                <li class="nav-item p-2 border-bottom border-secondary active-li">
+                    <a class="nav-link text-white" href="a_donors.html">🩸 Donor List</a>
+                </li>
+                <li class="nav-item p-2 border-bottom border-secondary">
+                    <a class="nav-link text-white" href="a_patients.html">👤 Patient List</a>
+                </li>
+                <li class="nav-item p-2 border-bottom border-secondary">
+                    <a class="nav-link text-white" href="a_requests.html">📥 Blood Requests</a>
+                </li>
+                <li class="nav-item p-2 border-bottom border-secondary">
+                    <a class="nav-link text-white" href="a_emergency.html">🚨 Emergency Requests</a>
+                </li>
+                <li class="nav-item p-2 border-bottom border-secondary">
+                    <a class="nav-link text-white" href="../logout.js">🔓 Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar end -->
+        <!-- Content area -->
+        <div class="main-content">
+            <h2 class="mb-4">Blood Requests </h2>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Requester Type</th>
+                        <th>Name</th>
+                        <th>Blood Group</th>
+                        <th>Amount (ml)</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="requestTableBody">
+
+
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            // Admin login check
+
+
+            // Example blood request data
+            const requests = [
+                {
+                    id: 1,
+                    type: "Patient",
+                    name: "Sadia Akter",
+                    bloodGroup: "A+",
+                    amount: 500,
+                    status: "Approved",
+                    date: "2025-04-15",
+                },
+                {
+                    id: 2,
+                    type: "Donor",
+                    name: "Rafiul Islam",
+                    bloodGroup: "O-",
+                    amount: 400,
+                    status: "Pending",
+                    date: "2025-04-17",
+                },
+                {
+                    id: 3,
+                    type: "Patient",
+                    name: "Mitu Khan",
+                    bloodGroup: "B-",
+                    amount: 600,
+                    status: "Rejected",
+                    date: "2025-04-10",
+                },
+            ];
+
+            // Load request data
+            function loadRequests() {
+                const table = document.getElementById("requestTableBody");
+                table.innerHTML = "";
+
+                requests.forEach((r) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                          <td>${r.id}</td>
+                          <td>${r.type}</td>
+                          <td>${r.name}</td>
+                          <td>${r.bloodGroup}</td>
+                          <td>${r.amount}</td>
+                          <td><span class="badge bg-${r.status === "Approved" ? "success" : r.status === "Pending" ? "warning text-dark" : "danger"}">${r.status}</span></td>
+                          <td>${r.date}</td>
+                        `;
+                    table.appendChild(row);
+                });
+            }
+
+            loadRequests();
+        </script>
+
+</body>
+</html>
